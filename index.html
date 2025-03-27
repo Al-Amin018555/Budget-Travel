@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Travel</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://kit.fontawesome.com/56cb384cd8.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <header>
+    <nav class="bg-gray-400 p-5">
+      <div class="navbar flex gap-5 flex-col lg:flex-row  max-w-7xl mx-auto">
+        <div class="flex-1">
+          <a class="text-5xl text-white font-bold">Budget Travel</a>
+        </div>
+
+        <div class="flex-none">
+          <ul class="flex gap-8 px-1">
+            <li>
+              <div class="flex-none">
+                <div class="dropdown dropdown-end">
+                  <div tabindex="0" role="button" class="">
+                    <div class="indicator">
+                      <img src="" alt="">
+                      <a href="#">
+                        <i class="fa-solid text-4xl fa-cart-shopping"></i>
+                        <span class="badge badge-md bg-red-300 indicator-item text-xl font-bold border-none">8</span>
+                      </a>
+
+                    </div>
+                  </div>
+            </li>
+            <li><a href="#" class="text-2xl text-white font-bold">Home</a></li>
+            <li><a href="#" class="text-2xl text-white font-bold">Settings</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  <main class="mt-10 p-5">
+    <!-- banner-section starts -->
+    <div class="mx-auto max-w-7xl flex gap-20 flex-col lg:flex-row items-center">
+
+      <div class="flex-1 text-center lg:text-left space-y-4">
+        <h1 class="text-6xl font-bold">Let's Travel</h1>
+        <p class="text-2xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos ab quidem magni numquam,
+          architecto, possimus aut officia sapiente reprehenderit itaque facere iusto perspiciatis ea quia molestias,
+          quisquam alias optio illum.</p>
+        <h4 class="text-4xl font-bold">Total Budget : <span id="total-budget">900</span> $</h4>
+      </div>
+
+      <div class="flex-1">
+        <img class="rounded-lg" src="images/travel-img2.jpg" alt="">
+      </div>
+    </div>
+    <!-- banner-section ends -->
+
+    <!-- tour booking section starts -->
+    <div class="my-10 flex gap-20 flex-col md:flex-row lg:flex-row">
+      <!-- tour places starts -->
+      <div class="md:w-[55%] lg:w-[60%] grid md:grid-cols-1 lg:grid-cols-2 gap-4">
+
+        <div class="p-2 flex items-center gap-5 card card-side h-[200px] bg-base-100 shadow-sm">
+          <figure class="w-[55%]">
+            <img src="images/sajek.jpg" class="h-[150px]">
+          </figure>
+          <div class="w-[45%] space-y-3">
+            <h2 class="font-bold text-3xl">Shajek</h2>
+            <h4 class="font-bold text-2xl">Cost : <span>300</span> $</h4>
+            <button class="btn btn">Add to Cart</button>
+
+          </div>
+        </div>
+
+        <div class="p-2 flex items-center gap-5 card card-side h-[200px] bg-base-100 shadow-sm">
+          <figure class="w-[55%]">
+            <img src="images/dhaka.jpg" class="h-[150px]">
+          </figure>
+          <div class="w-[45%] space-y-3">
+            <h2 class="font-bold text-3xl">Dhaka</h2>
+            <h4 class="font-bold text-2xl">Cost : <span>300</span> $</h4>
+            <button class="btn btn">Add to Cart</button>
+
+          </div>
+        </div>
+
+        <div class="p-2 flex items-center gap-5 card card-side  h-[200px]  bg-base-100 shadow-sm">
+          <figure class="w-[55%]">
+            <img src="images/khulna.jpg" class="h-[150px]">
+          </figure>
+          <div class="w-[45%] space-y-3">
+            <h2 class="font-bold text-3xl">Khulna</h2>
+            <h4 class="font-bold text-2xl">Cost : <span>500</span> $</h4>
+            <button class="btn btn">Add to Cart</button>
+
+          </div>
+        </div>
+
+        <div class="p-2 flex items-center gap-5 card card-side h-[200px] bg-base-100 shadow-sm">
+          <figure class="w-[55%]">
+            <img src="images/sylhet.jpg" class="h-[150px]">
+          </figure>
+          <div class="w-[45%] space-y-3">
+            <h2 class="font-bold text-3xl">Sylhet</h2>
+            <h4 class="font-bold text-2xl">Cost : <span>500</span> $</h4>
+            <button class="btn btn">Add to Cart</button>
+
+          </div>
+        </div>
+
+      </div>
+      <!-- tour places ends -->
+
+      <!-- Total Cost card starts -->
+      <div class="md:w-[45%] lg:w-[40%] rounded-lg shadow-lg">
+        <h1 class="text-center text-4xl font-bold">Cart</h1>
+        <div>
+          <hr>
+          <div id="places-container">
+
+          </div>
+          <hr>
+        </div>
+        <h4 class="text-center text-3xl font-bold">Total Cost : <span>0</span> $</h4>
+        <!-- transport buttons -->
+        <div class="flex justify-center space-x-3 mt-5">
+
+          <button class="btn lg:btn-lg">Bus +100</button>
+          <button class="btn lg:btn-lg">Train -200</button>
+          <button class="btn lg:btn-lg">Flight +500</button>
+
+        </div>
+        <hr class="mt-5">
+        <h4 class="font-bold text-3xl text-center">Grand Total : <span>0</span> $</h4>
+
+      </div>
+      <!-- Total Cost card ends -->
+    </div>
+
+    <!-- tour booking section ends -->
+
+
+  </main>
+</body>
+
+</html>
