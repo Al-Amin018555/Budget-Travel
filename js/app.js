@@ -15,6 +15,7 @@ for (const btn of allBtn) {
         const price = event.target.parentNode.childNodes[3].childNodes[1].innerText;
         // console.log(event.target.parentNode.childNodes[3].childNodes[1].innerText);
 
+
         const selectedContainer = document.getElementById('selected-places-container');
 
         const div = document.createElement('div');
@@ -28,28 +29,73 @@ for (const btn of allBtn) {
         div.appendChild(p);
         div.appendChild(p2);
 
+        const budget = document.getElementById('total-budget').innerText;
+        const convertedBudget = parseInt(budget);
+        if (convertedBudget - parseInt(price) < 0) {
+            alert('please earn more to visit');
+            return;
+        }
+        // console.log(event.target.parentNode.parentNode)
+        event.target.parentNode.parentNode.style.backgroundColor = 'gray';
+        event.target.setAttribute('disabled','');
+
+        document.getElementById('total-budget').innerText = convertedBudget - parseInt(price);
+
         selectedContainer.appendChild(div);
 
         totalCost('total-cost', parseInt(price))
-        grandTotal('grand-total',parseInt(price))
+        grandTotal('grand-total')
 
 
 
     });
 }
-
+//total cost calculator
 function totalCost(id, value) {
     const totalCost = document.getElementById(id).innerText;
     const convertedTotalCost = parseInt(totalCost);
     sum = convertedTotalCost + value;
     setInnerText(id, sum);
 }
+//grand cost calculator
+function grandTotal(category) {
 
-function grandTotal(id, value) {
-    const grandTotal = document.getElementById(id).innerText;
-    const convertedGrandTotal = parseInt(grandTotal);
-    sum = convertedGrandTotal + value;
-    setInnerText(id, sum)
+    const totalCost = document.getElementById('total-cost').innerText;
+    const convertedTotalCost = parseInt(totalCost);
+
+    if (category === 'bus') {
+        const availableBudget = document.getElementById('total-budget').innerText;
+        if(availableBudget - 100 < 0){
+            alert('please earn more to visit');
+            return;
+        }    
+        document.getElementById('total-budget').innerText = availableBudget - 100;
+        setInnerText('grand-total', convertedTotalCost + 100);
+
+    }
+    else if (category === 'train') {
+        const availableBudget = document.getElementById('total-budget').innerText;
+        if(availableBudget - 200 < 0){
+            alert('please earn more to visit');
+            return;
+        } 
+        document.getElementById('total-budget').innerText = availableBudget - 200;
+        setInnerText('grand-total', convertedTotalCost - 200);
+    }
+    else if (category === 'flight') {
+        const availableBudget = document.getElementById('total-budget').innerText;
+        if(availableBudget - 500 < 0){
+            alert('please earn more to visit');
+            return;
+        } 
+        document.getElementById('total-budget').innerText = availableBudget - 500;
+        setInnerText('grand-total', convertedTotalCost + 500);
+    }
+    else {
+        setInnerText('grand-total', convertedTotalCost);
+    }
+
+
 }
 
 function setInnerText(id, value) {
